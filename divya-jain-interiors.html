@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divya Jain Interiors × Axgen — Onboarding Form</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --blue:#0051e7; --blue-mid:#1f63ec; --ink:#0a0f1e; --steel:#6b7899; --light-steel:#a0aac4;
+  --blue-pale:#f0f4ff; --blue-tint:#dce8fd; --blue-wash:#f7f9ff;
+  --border:#e4e9f2; --green:#0f7a4a; --amber:#b45309; --red:#b91c1c;
+  --green-bg:#eafaf1; --amber-bg:#fef6e7; --red-bg:#fdecec; --wa:#25d366;
+}
+body { background:#c8cdd6; font-family:"Plus Jakarta Sans", sans-serif; padding:0 0 120px; color:var(--ink); }
+.doc { width:100%; max-width:760px; margin:0 auto; background:#fff; box-shadow:0 8px 40px rgba(0,0,0,0.14); overflow:hidden; }
+.hero { background:var(--blue); background-image:linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size:28px 28px; color:#fff; position:relative; overflow:hidden; padding:30px 36px 34px; }
+.hero-glow { position:absolute; top:-120px; right:-100px; width:360px; height:360px; background:radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius:50%; }
+.hero-top { display:flex; align-items:center; justify-content:space-between; position:relative; z-index:2; }
+.logo-pair { display:flex; align-items:center; gap:11px; }
+.logo-circle { width:40px; height:40px; border-radius:10px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; font-family:"Cormorant Garamond", serif; font-size:17px; font-weight:700; color:#fff; }
+.logo-x { font-family:"JetBrains Mono", monospace; font-size:13px; color:rgba(255,255,255,0.35); }
+.doc-tag { font-family:"JetBrains Mono", monospace; font-size:8px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.55); background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.14); border-radius:20px; padding:5px 13px; }
+.hero-eyebrow { font-family:"JetBrains Mono", monospace; font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin:22px 0 6px; position:relative; z-index:2; }
+.hero-title { font-family:"Cormorant Garamond", serif; font-size:42px; font-weight:700; letter-spacing:-1.2px; line-height:1.02; color:#fff; position:relative; z-index:2; }
+.hero-sub { font-family:"Cormorant Garamond", serif; font-size:18px; font-style:italic; color:rgba(255,255,255,0.62); margin-top:5px; position:relative; z-index:2; }
+.progress-wrap { position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.97); backdrop-filter:blur(6px); border-bottom:1px solid var(--border); padding:14px 36px; }
+.progress-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+.progress-label { font-family:"JetBrains Mono", monospace; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--steel); }
+.progress-count { font-size:13px; font-weight:700; color:var(--blue); }
+.progress-count span { color:var(--steel); font-weight:500; }
+.bar { height:8px; background:var(--blue-pale); border-radius:20px; overflow:hidden; }
+.bar-fill { height:100%; width:0%; background:linear-gradient(90deg, var(--blue) 0%, var(--blue-mid) 100%); border-radius:20px; transition:width .35s ease; }
+.body { padding:26px 36px 10px; }
+.intro { background:var(--blue-wash); border:1px solid var(--blue-tint); border-radius:12px; padding:16px 20px; margin-bottom:6px; }
+.intro p { font-size:12.5px; color:var(--steel); line-height:1.6; }
+.intro p strong { color:var(--ink); }
+.legend { display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:12px; }
+.lg { display:flex; align-items:center; gap:7px; font-size:10.5px; color:var(--steel); }
+.lg b { color:var(--ink); font-weight:700; }
+.dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+.dot.req{background:var(--red);} .dot.launch{background:var(--amber);} .dot.opt{background:var(--green);}
+.upload-banner { display:flex; align-items:center; gap:16px; background:linear-gradient(135deg,#eef4ff 0%, #e3edfd 100%); border:1px solid var(--blue-tint); border-radius:12px; padding:16px 20px; margin-top:14px; }
+.upload-ic { width:42px; height:42px; border-radius:10px; background:var(--blue); color:#fff; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.upload-tx { flex:1; }
+.upload-tx h4 { font-size:13px; color:var(--ink); margin-bottom:2px; }
+.upload-tx p { font-size:11px; color:var(--steel); line-height:1.45; }
+.upload-btn { background:var(--blue); color:#fff; text-decoration:none; font-size:12px; font-weight:700; padding:11px 18px; border-radius:9px; white-space:nowrap; box-shadow:0 3px 10px rgba(0,81,231,0.3); }
+.upload-btn:hover { background:var(--blue-mid); }
+.block { margin-top:30px; }
+.block-head { display:flex; align-items:baseline; gap:12px; border-bottom:2px solid var(--blue-tint); padding-bottom:9px; }
+.block-num { font-family:"JetBrains Mono", monospace; font-size:12px; font-weight:500; color:var(--blue); }
+.block-title { font-family:"Cormorant Garamond", serif; font-size:25px; font-weight:700; color:var(--ink); letter-spacing:-0.4px; }
+.block-why { font-size:11px; color:var(--steel); line-height:1.55; margin:9px 0 4px; }
+.block-why strong{ color:var(--ink); }
+.field { padding:15px 0; border-bottom:1px solid #f2f4f8; }
+.field:last-child { border-bottom:none; }
+.field-top { display:flex; align-items:flex-start; gap:11px; }
+.q { font-size:13px; font-weight:600; color:var(--ink); line-height:1.4; flex:1; }
+.pill { display:inline-block; font-family:"JetBrains Mono", monospace; font-size:7.5px; letter-spacing:.8px; text-transform:uppercase; font-weight:500; padding:3px 8px; border-radius:20px; white-space:nowrap; flex-shrink:0; margin-top:2px; }
+.pill.req{color:var(--red);background:var(--red-bg);border:1px solid #f3c9c9;}
+.pill.launch{color:var(--amber);background:var(--amber-bg);border:1px solid #f4e0b8;}
+.pill.opt{color:var(--green);background:var(--green-bg);border:1px solid #bfe9d1;}
+.why { font-size:10.5px; color:var(--steel); line-height:1.5; margin:5px 0 9px; }
+.inp { width:100%; font-family:"Plus Jakarta Sans", sans-serif; font-size:13px; color:var(--ink); padding:10px 13px; border:1.5px solid var(--border); border-radius:9px; background:#fff; transition:border-color .15s; }
+.inp:focus { outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(0,81,231,0.08); }
+.inp::placeholder { color:var(--light-steel); }
+textarea.inp { resize:vertical; min-height:46px; line-height:1.5; }
+.chk-row { display:flex; align-items:center; gap:11px; cursor:pointer; user-select:none; padding:9px 13px; border:1.5px solid var(--border); border-radius:9px; transition:.15s; }
+.chk-row:hover { border-color:var(--blue-tint); background:var(--blue-wash); }
+.chk-row input { position:absolute; opacity:0; pointer-events:none; }
+.box { width:22px; height:22px; border-radius:6px; border:2px solid var(--light-steel); flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:.15s; background:#fff; }
+.box svg { width:13px; height:13px; opacity:0; transform:scale(.5); transition:.15s; }
+.chk-row input:checked + .box { background:var(--green); border-color:var(--green); }
+.chk-row input:checked + .box svg { opacity:1; transform:scale(1); }
+.chk-txt { font-size:12px; color:var(--steel); font-weight:600; }
+.chk-row input:checked ~ .chk-txt { color:var(--green); }
+.na-btn { display:inline-flex; align-items:center; gap:6px; margin-top:9px; font-family:"Plus Jakarta Sans", sans-serif; font-size:11px; font-weight:600; color:var(--steel); background:#fff; border:1.5px solid var(--border); border-radius:8px; padding:7px 13px; cursor:pointer; transition:.15s; }
+.na-btn:hover { border-color:var(--light-steel); }
+.na-btn.na-on { background:#eef1f6; border-color:var(--steel); color:var(--ink); }
+.access-to { display:flex; gap:11px; align-items:flex-start; background:var(--blue-wash); border:1px dashed var(--blue-tint); border-radius:10px; padding:12px 15px; margin:6px 0 2px; }
+.access-to .ic { font-size:15px; flex-shrink:0; }
+.access-to p { font-size:11px; color:var(--steel); line-height:1.55; }
+.access-to p strong { color:var(--ink); }
+.access-to .email { font-weight:700; color:var(--blue); }
+.qlink { display:inline-flex; align-items:center; gap:6px; margin-top:9px; font-size:11px; font-weight:700; color:var(--blue); text-decoration:none; background:var(--blue-pale); border:1px solid var(--blue-tint); border-radius:8px; padding:7px 12px; }
+.qlink:hover { background:var(--blue-tint); }
+.field.req-missing { background:var(--red-bg); border-left:3px solid var(--red); border-radius:8px; padding-left:12px; padding-right:12px; }
+.callout { display:flex; gap:12px; border-radius:10px; padding:13px 16px; margin-top:14px; }
+.callout.info { background:var(--blue-wash); border:1px solid var(--blue-tint); }
+.callout.warn { background:var(--amber-bg); border:1px solid #f4e0b8; }
+.callout-ic { flex-shrink:0; font-size:16px; }
+.callout p { font-size:11px; line-height:1.5; color:var(--steel); }
+.callout.warn p { color:var(--amber); }
+.callout p strong { color:var(--ink); }
+.steps { display:grid; grid-template-columns:repeat(4,1fr); margin-top:16px; position:relative; }
+.steps::before { content:""; position:absolute; top:12px; left:12%; right:12%; height:2px; background:linear-gradient(90deg, var(--blue), var(--blue-tint)); }
+.step { position:relative; z-index:1; text-align:center; padding:0 5px; }
+.step-dot { width:26px; height:26px; border-radius:50%; background:var(--blue); color:#fff; border:2px solid #fff; box-shadow:0 0 0 2px var(--blue); margin:0 auto 9px; display:flex; align-items:center; justify-content:center; font-family:"JetBrains Mono", monospace; font-size:10px; font-weight:700; }
+.step-t { font-size:10.5px; color:var(--ink); font-weight:700; line-height:1.3; }
+.step-s { font-size:9.5px; color:var(--steel); line-height:1.35; margin-top:3px; }
+.foot { margin-top:26px; padding:16px 36px; border-top:1px solid var(--border); display:flex; justify-content:space-between; font-family:"JetBrains Mono", monospace; font-size:8px; letter-spacing:1.2px; text-transform:uppercase; color:var(--light-steel); }
+.submit-bar { position:fixed; bottom:0; left:0; right:0; z-index:60; background:rgba(255,255,255,0.98); backdrop-filter:blur(8px); border-top:1px solid var(--border); box-shadow:0 -4px 20px rgba(0,0,0,0.07); padding:14px 0; }
+.submit-inner { width:100%; max-width:760px; margin:0 auto; padding:0 36px; display:flex; gap:12px; align-items:center; }
+.save-note { font-size:10.5px; color:var(--steel); flex:1; line-height:1.4; }
+.save-note b { color:var(--green); }
+.btn-reset { background:#fff; color:var(--steel); border:1.5px solid var(--border); font-size:11px; font-weight:600; padding:12px 14px; border-radius:9px; cursor:pointer; }
+.btn-reset:hover { border-color:var(--light-steel); }
+.btn-send { background:var(--wa); color:#fff; border:none; font-size:13px; font-weight:700; padding:13px 22px; border-radius:9px; cursor:pointer; display:flex; align-items:center; gap:9px; box-shadow:0 3px 12px rgba(37,211,102,0.4); }
+.btn-send:hover { filter:brightness(0.96); }
+.btn-send svg { width:17px; height:17px; }
+@media (max-width:560px){
+  .hero,.body,.progress-wrap,.foot,.submit-inner{ padding-left:20px; padding-right:20px; }
+  .hero-title{ font-size:34px; } .steps{ grid-template-columns:1fr 1fr; gap:18px 0; } .steps::before{ display:none; }
+  .upload-banner{ flex-wrap:wrap; } .save-note{ display:none; }
+}
+</style>
+</head>
+<body>
+
+<div class="doc">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-top">
+      <div class="logo-pair"><div class="logo-circle">D</div><span class="logo-x">&times;</span><div class="logo-circle">A</div></div>
+      <span class="doc-tag">Onboarding Form</span>
+    </div>
+    <div class="hero-eyebrow">Website &middot; SEO</div>
+    <div class="hero-title">Divya Jain Interiors</div>
+    <div class="hero-sub">Tell us a few details, tick what's ready, upload your files</div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <div class="progress-row">
+      <span class="progress-label">Required items complete</span>
+      <span class="progress-count" id="pcount">0 <span>/ 0</span></span>
+    </div>
+    <div class="bar"><div class="bar-fill" id="pfill"></div></div>
+  </div>
+
+  <div class="body">
+
+    <div class="intro">
+      <p>Fill in what you can, <strong>tick the box once you've uploaded a file or granted access</strong>, and use the button below to drop your files into your folder. No rush — <strong>your answers save automatically on this device</strong>. When you're done (or done enough), tap <strong>"Send my answers"</strong> at the bottom — WhatsApp opens with everything filled in, just hit send.</p>
+      <div class="legend">
+        <div class="lg"><span class="dot req"></span> <b>Required to start</b></div>
+        <div class="lg"><span class="dot launch"></span> <b>Needed before launch</b></div>
+        <div class="lg"><span class="dot opt"></span> <b>Helpful / optional</b></div>
+      </div>
+    </div>
+
+    <!-- UPLOAD BANNER -->
+    <div class="upload-banner">
+      <div class="upload-ic">&#8682;</div>
+      <div class="upload-tx">
+        <h4>Upload your files here</h4>
+        <p>Logos, photos, videos, testimonials, existing material — drag &amp; drop into the labelled folders. No size limits.</p>
+      </div>
+      <a class="upload-btn" id="uploadLink" href="https://drive.google.com/drive/folders/1XvpbADBLukSWVxJTG_aHkjF92U9yEQD2?usp=sharing" target="_blank" rel="noopener">Open folder</a>
+    </div>
+
+    <!-- ===== UNIVERSAL — KEEP FOR EVERY CLIENT ===== -->
+    <!-- 1. COMPANY & CONTACT -->
+    <div class="block">
+      <div class="block-head"><span class="block-num">01</span><span class="block-title">Company &amp; Contact Details</span></div>
+      <p class="block-why">So we address you correctly everywhere and reach the right person for approvals.</p>
+      <div class="field"><div class="field-top"><span class="q">Exact legal &amp; brand name</span><span class="pill req">Required</span></div><p class="why">How your name should appear across everything we make.</p><input class="inp" type="text" data-key="Legal/brand name" data-req="1" placeholder="e.g. Acme Pvt Ltd" value="Divya Jain Interiors"></div>
+      <div class="field"><div class="field-top"><span class="q">City &amp; service area(s)</span><span class="pill req">Required</span></div><p class="why">Drives positioning, targeting and which regions we focus on.</p><input class="inp" type="text" data-key="City & service area" data-req="1" placeholder="e.g. Pune — serving Maharashtra" value="Pune (HQ — Aundh) & Mumbai · design services All-India"></div>
+      <div class="field"><div class="field-top"><span class="q">Decision-maker &amp; direct contact</span><span class="pill req">Required</span></div><p class="why">Name + WhatsApp/email of who signs off on approvals.</p><input class="inp" type="text" data-key="Decision-maker & contact" data-req="1" placeholder="Name · WhatsApp · email" value="Divya Jain (Founder) · +91 8959070757 · divyajaininteriors@gmail.com"></div>
+      <div class="field"><div class="field-top"><span class="q">Content language(s)</span><span class="pill launch">Before launch</span></div><p class="why">Which language(s) we should create content in.</p><input class="inp" type="text" data-key="Content language(s)" placeholder="e.g. English; Hindi" value="English"></div>
+      <div class="field"><div class="field-top"><span class="q">Where do enquiries reach you today?</span><span class="pill launch">Before launch</span></div><p class="why">So new leads land where you already work.</p><input class="inp" type="text" data-key="Where enquiries go today" placeholder="WhatsApp / email / phone" value="WhatsApp +91 8959070757 · Instagram DMs · email"></div>
+    </div>
+
+    <!-- 2. BRAND KIT -->
+    <div class="block">
+      <div class="block-head"><span class="block-num">02</span><span class="block-title">Brand Kit</span></div>
+      <p class="block-why">So everything we make looks like one consistent brand. Don't have these yet? Just say so — we can create them.</p>
+      <div class="field"><div class="field-top"><span class="q">Logo (vector — SVG / AI / PDF)</span><span class="pill req">Required</span></div><p class="why">Upload to <em>01_Logo_and_Brand</em>. A PNG is a fallback only.</p><label class="chk-row"><input type="checkbox" data-key="Logo uploaded" data-req="1"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">I've uploaded the logo</span></label></div>
+      <div class="field"><div class="field-top"><span class="q">Brand colours</span><span class="pill req">Required</span></div><p class="why">Exact colour codes if you know them — or tell us where to find them.</p><input class="inp" type="text" data-key="Brand colours" data-req="1" placeholder="e.g. #0B3D2E and gold — or 'see logo'"></div>
+      <div class="field"><div class="field-top"><span class="q">Fonts / typography</span><span class="pill opt">Optional</span></div><p class="why">Any brand fonts you use; otherwise we'll recommend a pairing.</p><input class="inp" type="text" data-key="Fonts" placeholder="e.g. Montserrat — or 'you decide'"></div>
+      <div class="field"><div class="field-top"><span class="q">Brand guidelines / things you dislike</span><span class="pill opt">Optional</span></div><p class="why">Tone, do's &amp; don'ts — so we get it right the first time.</p><textarea class="inp" data-key="Brand guidelines / dislikes" placeholder="Anything we should always do — or never do">Premium, editorial, 'classy not overwhelming'. Full-bleed / edge-to-edge imagery (never boxed); editorial serif display headlines (not bold sans); understated underlined text links (not filled pill buttons); generous whitespace; fast / mobile-first. Current stage = grayscale low-fi wireframes.</textarea></div>
+      <div class="field"><div class="field-top"><span class="q">References you like</span><span class="pill opt">Optional</span></div><p class="why">Brands/sites/ads whose look &amp; feel you admire.</p><textarea class="inp" data-key="References" placeholder="Paste links or names, one per line">v1 standalone wireframe (Claude Design) · current site: divyajaininteriors.com</textarea></div>
+    </div>
+
+    <!-- 3. BUSINESS CONTENT & ASSETS -->
+    <div class="block">
+      <div class="block-head"><span class="block-num">03</span><span class="block-title">Business Content &amp; Assets</span></div>
+      <p class="block-why">The raw material we turn into your marketing. The richer this is, the stronger the work. Drop files into the labelled folders; add notes below.</p>
+      <div class="field"><div class="field-top"><span class="q">What you sell + your main offers</span><span class="pill req">Required</span></div><p class="why">Your core services/products and any current offer or promo to push.</p><textarea class="inp" data-key="Offers / services" data-req="1" placeholder="Services/products · current offer or promo">Engagement models: Design Only · Design & Supervision · Turnkey · Consultation. Services: Residential, Commercial, Hospitality, Luxury Renovation, Sample Flat Designs, Themed Interiors, Space Optimisation, Bespoke Furniture, Art Curation, Property Flippers, NRI Solutions, Consultancy.</textarea></div>
+      <div class="field"><div class="field-top"><span class="q">Who is your ideal customer?</span><span class="pill req">Required</span></div><p class="why">Who we should target — and who you do NOT want.</p><textarea class="inp" data-key="Ideal customer" data-req="1" placeholder="e.g. homeowners 30–55 in Pune planning a renovation">Priority ₹40L+ luxury residential (4BHK / villa / penthouse); builder–developer B2B (sample flats); premium 2–3BHK turnkey; commercial; NRI. Pune + Mumbai. Good lead = premium/luxury possession wanting turnkey, with budget + real timeline.</textarea></div>
+      <div class="field"><div class="field-top"><span class="q">Why you (proof / what makes you different)</span><span class="pill launch">Before launch</span></div><p class="why">USPs, scale, results, anything that builds trust.</p><textarea class="inp" data-key="Proof / differentiators" placeholder="Awards, numbers, signature projects, guarantees…"></textarea></div>
+      <div class="field"><div class="field-top"><span class="q">Photos / images</span><span class="pill req">Required</span></div><p class="why">High-resolution work, product or brand images → <em>02_Photos</em>.</p><label class="chk-row"><input type="checkbox" data-key="Photos uploaded" data-req="1"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">I've uploaded photos</span></label></div>
+      <div class="field"><div class="field-top"><span class="q">Videos</span><span class="pill launch">Before launch</span></div><p class="why">Any footage you have → <em>03_Videos</em>.</p><label class="chk-row"><input type="checkbox" data-key="Videos uploaded"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">I've uploaded videos</span></label></div>
+      <div class="field"><div class="field-top"><span class="q">Testimonials / reviews</span><span class="pill launch">Before launch</span></div><p class="why">Customer quotes, screenshots → <em>04_Testimonials</em> (or type below).</p><textarea class="inp" data-key="Testimonials" placeholder="Quote — Name (or note that files are uploaded)">Google 4.8★ reviews + on-site testimonials available (e.g. Mrs. Sanyogita Bhargav, Mrs. Jasmine Tailor).</textarea></div>
+      <div class="field"><div class="field-top"><span class="q">Existing marketing material</span><span class="pill opt">Optional</span></div><p class="why">Old brochures, decks, creatives → <em>05_Existing_Material</em>.</p><label class="chk-row"><input type="checkbox" data-key="Existing material uploaded"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">I've uploaded existing material (or have none)</span></label></div>
+    </div>
+    <!-- ===== END UNIVERSAL ===== -->
+
+    <!-- ===== KEEP IF: Website ===== -->
+    <div class="block">
+      <div class="block-head"><span class="block-num">04</span><span class="block-title">Website Setup</span></div>
+      <p class="block-why">A few decisions let us go live cleanly. The technical hosting we handle for you.</p>
+      <div class="access-to"><span class="ic">&#128273;</span><p><strong>Who to give access to:</strong> for your <strong>domain / DNS</strong> (and analytics once live), add <span class="email access-email-google">axgen.main@gmail.com</span> as a user. We host the site under Axgen's own Google account.</p></div>
+      <div class="field"><div class="field-top"><span class="q">Preferred domain name</span><span class="pill req">Required</span></div><p class="why">Your web address. Don't own one? We'll help you choose &amp; register.</p><input class="inp" type="text" data-key="Preferred domain" data-req="1" placeholder="e.g. yourbrand.com" value="divyajaininteriors.com (keep same domain — preserve SEO)"></div>
+      <div class="field"><div class="field-top"><span class="q">Domain registrar / DNS access</span><span class="pill launch">Before launch</span></div><p class="why">Where you bought the domain (so we can point it at the new site).</p><input class="inp" type="text" data-key="Registrar / DNS" placeholder="e.g. GoDaddy / BigRock — or 'no domain yet'"></div>
+      <div class="field"><div class="field-top"><span class="q">A Gmail account for hosting setup</span><span class="pill req">Required</span></div><p class="why">We host your site under a Google account. Share a business Gmail, or we'll guide you to create one.</p><input class="inp" type="text" data-key="Gmail for hosting" data-req="1" placeholder="business@gmail.com — or 'please help me create one'"></div>
+      <div class="field"><div class="field-top"><span class="q">Where should website leads go?</span><span class="pill launch">Before launch</span></div><p class="why">The email/WhatsApp that should receive enquiries &amp; downloads.</p><input class="inp" type="text" data-key="Where website leads go" placeholder="email and/or WhatsApp number" value="Book a consultation + WhatsApp +91 8959070757 + qualified form → CRM (CRM TBD)"></div>
+    </div>
+    <!-- ===== END Website ===== -->
+
+    <!-- ===== KEEP IF: SEO / AEO / GEO ===== -->
+    <div class="block">
+      <div class="block-head"><span class="block-num">05</span><span class="block-title">SEO &amp; Search Access</span></div>
+      <p class="block-why">Tools that let us optimise, measure and report. Most are set up once the site is live — and <strong>we'll create any you don't have</strong>, so just tick what already exists.</p>
+      <div class="access-to"><span class="ic">&#128273;</span><p><strong>Who to give access to:</strong> add <span class="email access-email-google">axgen.main@gmail.com</span> as a <strong>manager / user</strong> on each account below. (We send a step-by-step on request — no passwords needed.)</p></div>
+      <div class="field"><div class="field-top"><span class="q">Google Business Profile</span><span class="pill launch">Before launch</span></div><p class="why">Helps you show on Google Maps / search. We can create one.</p><label class="chk-row"><input type="checkbox" data-key="GBP access given"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">Access given</span></label><a class="qlink" href="https://business.google.com/" target="_blank" rel="noopener">&#128279; Open Google Business Profile &rarr;</a></div>
+      <div class="field"><div class="field-top"><span class="q">Google Search Console</span><span class="pill launch">Before launch</span></div><p class="why">Verifies the site &amp; tracks search performance.</p><label class="chk-row"><input type="checkbox" data-key="Search Console access given"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">Access given</span></label><a class="qlink" href="https://search.google.com/search-console/users" target="_blank" rel="noopener">&#128279; Open Search Console &rsaquo; Users &rarr;</a></div>
+      <div class="field"><div class="field-top"><span class="q">Bing Webmaster Tools</span><span class="pill launch">Before launch</span></div><p class="why">Also powers AI search (ChatGPT/Copilot). We can set this up.</p><label class="chk-row"><input type="checkbox" data-key="Bing access given"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">Access given</span></label><a class="qlink" href="https://www.bing.com/webmasters/" target="_blank" rel="noopener">&#128279; Open Bing Webmaster Tools &rarr;</a></div>
+      <div class="field"><div class="field-top"><span class="q">Google Analytics (GA4)</span><span class="pill launch">Before launch</span></div><p class="why">Measures visitors &amp; enquiries so we can prove results.</p><label class="chk-row"><input type="checkbox" data-key="GA4 access given"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">Access given</span></label><a class="qlink" href="https://analytics.google.com/analytics/web/#/admin" target="_blank" rel="noopener">&#128279; Open Google Analytics &rsaquo; Admin &rarr;</a></div>
+      <div class="callout info"><span class="callout-ic">&#128274;</span><p><strong>Don't have these?</strong> Totally normal — leave them unticked and Axgen will create and configure everything for you.</p></div>
+    </div>
+    <!-- ===== END SEO ===== -->
+
+    <!-- ===== UNIVERSAL — KEEP FOR EVERY CLIENT ===== -->
+    <!-- WHAT NEXT -->
+    <div class="block">
+      <div class="block-head"><span class="block-num">06</span><span class="block-title">What Happens Next</span></div>
+      <div class="steps">
+        <div class="step"><div class="step-dot">1</div><div class="step-t">You share details &amp; files</div><div class="step-s">The required items above</div></div>
+        <div class="step"><div class="step-dot">2</div><div class="step-t">We plan your strategy</div><div class="step-s">For your sign-off</div></div>
+        <div class="step"><div class="step-dot">3</div><div class="step-t">We create &amp; you approve</div><div class="step-s">Drafts at each stage</div></div>
+        <div class="step"><div class="step-dot">4</div><div class="step-t">Go live &amp; optimise</div><div class="step-s">Launch, then improve</div></div>
+      </div>
+      <div class="callout warn"><span class="callout-ic">&#9888;</span><p><strong>Please don't paste passwords</strong> into WhatsApp or email. For any account, add us as a manager/user instead — it's safer and easy to revoke.</p></div>
+    </div>
+    <!-- ===== END UNIVERSAL ===== -->
+
+  </div>
+
+  <div class="foot"><span>Axgen AI Pvt Ltd &middot; Confidential</span><span>Divya Jain Interiors &middot; Onboarding Form</span></div>
+</div>
+
+<!-- STICKY SUBMIT -->
+<div class="submit-bar">
+  <div class="submit-inner">
+    <span class="save-note"><b>&#10003; Saved automatically</b> on this device as you type.</span>
+    <button class="btn-reset" id="btnReset">Clear</button>
+    <button class="btn-send" id="btnSend">
+      <svg viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.738-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg>
+      Send my answers
+    </button>
+  </div>
+</div>
+
+<script>
+/* ============ CONFIG — fill these in for each client ============ */
+const CLIENT_SLUG     = "dji";          // short id, e.g. "jrk" — keeps autosave separate per client
+const WHATSAPP_NUMBER = "917030602026";              // Axgen WhatsApp (digits only, incl. 91). Answers are sent here.
+const DRIVE_UPLOAD_URL = "https://drive.google.com/drive/folders/1XvpbADBLukSWVxJTG_aHkjF92U9yEQD2?usp=sharing";  // share link to the client's 'Client_Uploads' folder
+const ACCESS_EMAIL    = "admin@axgen.co";            // general / Meta / LinkedIn partner access
+const ACCESS_EMAIL_GOOGLE = "axgen.main@gmail.com";  // Google-based access: Search Console, GA4, GBP, Google Ads, domain/analytics
+/* =============================================================== */
+
+const KEY = "axgen_onboarding_" + CLIENT_SLUG;
+// no "Don't have / N/A" for identity fields or for access grants (access is unavoidable)
+const EXCLUDE_NA = ["Legal/brand name", "City & service area", "Decision-maker & contact",
+  "GBP access given", "Search Console access given", "Bing access given", "GA4 access given",
+  "Facebook Page access", "Meta ad account access", "Meta billing added",
+  "Google Ads access", "GA4 access (Google ads)",
+  "LinkedIn Page access", "LinkedIn Campaign Manager access", "Social access given"];
+const fields = Array.from(document.querySelectorAll("[data-key]"));
+const byKey = {}; fields.forEach(f => byKey[f.getAttribute("data-key")] = f);
+const naState = {}, naBtn = {};
+
+// fill the access emails everywhere they appear
+document.querySelectorAll(".access-email").forEach(el => el.textContent = ACCESS_EMAIL);
+document.querySelectorAll(".access-email-google").forEach(el => el.textContent = ACCESS_EMAIL_GOOGLE);
+
+// Drive upload button
+const ulink = document.getElementById("uploadLink");
+if (DRIVE_UPLOAD_URL && DRIVE_UPLOAD_URL.indexOf("PASTE_") !== 0) { ulink.href = DRIVE_UPLOAD_URL; }
+else { ulink.addEventListener("click", e => { e.preventDefault(); alert("Your upload folder link will appear here shortly."); }); }
+
+// inject "Don't have / N/A" buttons
+fields.forEach(f => {
+  const k = f.getAttribute("data-key");
+  if (EXCLUDE_NA.indexOf(k) !== -1) return;
+  const host = (f.type === "checkbox") ? f.closest(".chk-row") : f;
+  const btn = document.createElement("button");
+  btn.type = "button"; btn.className = "na-btn"; btn.textContent = "Don't have / N/A";
+  host.insertAdjacentElement("afterend", btn); naBtn[k] = btn;
+  btn.addEventListener("click", () => { setNA(k, !naState[k]); save(); const fl = byKey[k].closest(".field"); if (fl && naState[k]) fl.classList.remove("req-missing"); });
+});
+function setNA(k, on){
+  naState[k] = on; const f = byKey[k], btn = naBtn[k];
+  if (on){ if (f.type === "checkbox") f.checked = false; else { f.value = ""; f.disabled = true; f.style.opacity = 0.5; }
+    if (btn){ btn.classList.add("na-on"); btn.textContent = "✓ Don't have / N/A"; } }
+  else { if (f.type !== "checkbox"){ f.disabled = false; f.style.opacity = 1; }
+    if (btn){ btn.classList.remove("na-on"); btn.textContent = "Don't have / N/A"; } }
+}
+function load(){
+  let data = {}; try { data = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e){}
+  const vals = data.values || {}, nas = data.na || {};
+  fields.forEach(f => { const k = f.getAttribute("data-key"); if (!(k in vals)) return;
+    if (f.type === "checkbox") f.checked = !!vals[k]; else f.value = vals[k]; });
+  Object.keys(nas).forEach(k => { if (nas[k]) setNA(k, true); });
+}
+function save(){
+  const data = { values:{}, na:{} };
+  fields.forEach(f => { const k = f.getAttribute("data-key"); data.values[k] = (f.type === "checkbox") ? f.checked : f.value; });
+  Object.keys(naState).forEach(k => { data.na[k] = !!naState[k]; });
+  localStorage.setItem(KEY, JSON.stringify(data)); updateProgress();
+}
+function updateProgress(){
+  const req = fields.filter(f => f.getAttribute("data-req") === "1");
+  const done = req.filter(f => { const k = f.getAttribute("data-key"); if (naState[k]) return true;
+    return (f.type === "checkbox") ? f.checked : f.value.trim() !== ""; }).length;
+  document.getElementById("pcount").innerHTML = done + " <span>/ " + req.length + "</span>";
+  document.getElementById("pfill").style.width = req.length ? (done/req.length*100) + "%" : "0%";
+}
+function buildMessage(){
+  let lines = ["*Divya Jain Interiors - Onboarding details*", ""];
+  document.querySelectorAll(".block").forEach(block => {
+    const title = block.querySelector(".block-title"); const blkFields = block.querySelectorAll("[data-key]");
+    if (!title || blkFields.length === 0) return;
+    let chunk = [];
+    blkFields.forEach(f => { const k = f.getAttribute("data-key");
+      if (naState[k]) { chunk.push("[N/A] " + k); return; }
+      if (f.type === "checkbox") { chunk.push((f.checked ? "[x] " : "[  ] ") + k); }
+      else if (f.value.trim() !== "") { chunk.push("- " + k + ": " + f.value.trim()); } });
+    if (chunk.length){ lines.push("*" + title.textContent.trim() + "*"); lines = lines.concat(chunk); lines.push(""); }
+  });
+  lines.push("- Sent from the onboarding form");
+  return lines.join("\n");
+}
+fields.forEach(f => { const k = f.getAttribute("data-key");
+  const handler = () => { if (naState[k] && ((f.type === "checkbox" && f.checked) || (f.type !== "checkbox" && f.value.trim() !== ""))) setNA(k, false); save(); const fl = f.closest(".field"); if (fl && fl.classList.contains("req-missing") && ((f.type === "checkbox") ? f.checked : f.value.trim() !== "")) fl.classList.remove("req-missing"); };
+  f.addEventListener("input", handler); f.addEventListener("change", handler); });
+document.getElementById("btnSend").addEventListener("click", () => {
+  // ---- validation: required items must be filled before sending ----
+  const isDone = f => { const k = f.getAttribute("data-key"); if (naState[k]) return true; return (f.type === "checkbox") ? f.checked : f.value.trim() !== ""; };
+  document.querySelectorAll(".field.req-missing").forEach(el => el.classList.remove("req-missing"));
+  const reqMiss = fields.filter(f => f.getAttribute("data-req") === "1" && !isDone(f));
+  if (reqMiss.length) {
+    reqMiss.forEach(f => { const fl = f.closest(".field"); if (fl) fl.classList.add("req-missing"); });
+    reqMiss[0].closest(".field").scrollIntoView({ behavior: "smooth", block: "center" });
+    alert("Please complete the " + reqMiss.length + " highlighted required item(s) before sending.");
+    return;
+  }
+  const launchMiss = fields.filter(f => { const fl = f.closest(".field"); return fl && fl.querySelector(".pill.launch") && !isDone(f); });
+  if (launchMiss.length && !confirm(launchMiss.length + " 'before launch' item(s) are still blank. You can share these later — send now anyway?")) {
+    launchMiss.forEach(f => { const fl = f.closest(".field"); if (fl) fl.classList.add("req-missing"); });
+    launchMiss[0].closest(".field").scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  const msg = buildMessage(); const num = WHATSAPP_NUMBER.replace(/[^0-9]/g, "");
+  if (num.indexOf("X") !== -1 || num.length < 10) { alert("WhatsApp number isn't set yet. Your answers are saved — please send them to Axgen."); return; }
+  const win = window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(msg), "_blank");
+  if (!win) { if (navigator.clipboard) navigator.clipboard.writeText(msg).then(() => alert("Couldn't open WhatsApp. Your answers are copied — paste them to Axgen on WhatsApp.")); else window.prompt("Copy your answers and send to Axgen:", msg); }
+});
+document.getElementById("btnReset").addEventListener("click", () => {
+  if (confirm("Clear all your answers on this device?")) { localStorage.removeItem(KEY);
+    Object.keys(naState).forEach(k => { if (naState[k]) setNA(k, false); });
+    fields.forEach(f => { if (f.type === "checkbox") f.checked = false; else f.value = ""; }); updateProgress(); }
+});
+load(); updateProgress();
+</script>
+</body>
+</html>
