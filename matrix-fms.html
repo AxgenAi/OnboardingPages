@@ -79,6 +79,14 @@ textarea.inp { resize:vertical; min-height:46px; line-height:1.5; }
 .num-cell .inp { background:#fff; }
 .multi{ display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
 .multi .chk-row{ width:auto; }
+.upload-banner { display:flex; align-items:center; gap:16px; background:linear-gradient(135deg,#eef4ff 0%, #e3edfd 100%); border:1px solid var(--blue-tint); border-radius:12px; padding:16px 20px; margin-top:14px; }
+.upload-ic { width:42px; height:42px; border-radius:10px; background:var(--blue); color:#fff; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.upload-tx { flex:1; }
+.upload-tx h4 { font-size:13px; color:var(--ink); margin-bottom:2px; }
+.upload-tx p { font-size:11px; color:var(--steel); line-height:1.45; }
+.upload-btn { background:var(--blue); color:#fff; text-decoration:none; font-size:12px; font-weight:700; padding:11px 18px; border-radius:9px; white-space:nowrap; box-shadow:0 3px 10px rgba(0,81,231,0.3); }
+.upload-btn:hover { background:var(--blue-mid); }
+@media (max-width:560px){ .upload-banner{ flex-wrap:wrap; } }
 .field.req-missing { background:var(--red-bg); border-left:3px solid var(--red); border-radius:8px; padding-left:12px; padding-right:12px; }
 .callout { display:flex; gap:12px; border-radius:10px; padding:13px 16px; margin-top:14px; }
 .callout.info { background:var(--blue-wash); border:1px solid var(--blue-tint); }
@@ -145,12 +153,22 @@ input, textarea, button, select { font-family:inherit; }
       <p><strong>Takes 2 minutes.</strong> Fill in what you can, tick your logo when shared, and tap <strong>Send my answers</strong> &mdash; it opens WhatsApp with everything filled in. Your answers also save on this device as you type.</p>
     </div>
 
+    <!-- UPLOAD BANNER -->
+    <div class="upload-banner">
+      <div class="upload-ic">&#8682;</div>
+      <div class="upload-tx">
+        <h4>Share your files here</h4>
+        <p>Logo, project photos, videos &amp; awards &mdash; send them on this WhatsApp chat, or upload them to the Drive folder. Whatever's easier.</p>
+      </div>
+      <a class="upload-btn" id="uploadLink" href="https://drive.google.com/drive/folders/1OW-V39QHqDUQ354k8RlZw3yog1xrkXzo?usp=sharing" target="_blank" rel="noopener">Open folder</a>
+    </div>
+
     <!-- 1. ABOUT YOUR COMPANY -->
     <div class="block">
       <div class="block-head"><span class="block-num">01</span><span class="block-title">About Your Company</span></div>
       <p class="block-why">The essentials we use across everything we create for you.</p>
 
-      <div class="field"><div class="field-top"><span class="q">Your company logo</span><span class="pill req">Required</span></div><p class="why">PNG with a <strong>transparent background</strong> (SVG is also great if you have it). Please send the file to us on WhatsApp, then tick below.</p><label class="chk-row"><input type="checkbox" data-key="Logo shared (PNG transparent / SVG)" data-req="1"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">I've shared my logo on WhatsApp</span></label></div>
+      <div class="field"><div class="field-top"><span class="q">Your company logo</span><span class="pill req">Required</span></div><p class="why">PNG with a <strong>transparent background</strong> (SVG is also great if you have it). Send it on WhatsApp or upload to the Drive folder above, then tick below.</p><label class="chk-row"><input type="checkbox" data-key="Logo shared (PNG transparent / SVG)" data-req="1"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">I've shared my logo on WhatsApp</span></label></div>
 
       <div class="field"><div class="field-top"><span class="q">Your company tagline</span><span class="pill req">Required</span></div><p class="why">The short line that sits under your name.</p><input class="inp" type="text" data-key="Tagline" data-req="1" placeholder="e.g. Designing spaces that feel like home"></div>
 
@@ -185,7 +203,7 @@ input, textarea, button, select { font-family:inherit; }
       <div class="field"><div class="field-top"><span class="q">Project 3</span><span class="pill launch">Before launch</span></div><p class="why">Title &middot; sector &middot; location &middot; year, then a 1&ndash;2 line description.</p><input class="inp" type="text" data-key="Project 3 — Title / sector / location / year" placeholder="e.g. Green Villa · Landscape · Pune · 2024"><textarea class="inp" style="margin-top:8px" data-key="Project 3 — Description" placeholder="1–2 lines describing the project"></textarea><label class="chk-row" style="margin-top:8px"><input type="checkbox" data-key="Project 3 — Flagship (homepage)"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">Flagship — show on homepage</span></label></div>
       <div class="field"><div class="field-top"><span class="q">Project 4</span><span class="pill opt">Optional</span></div><p class="why">Title &middot; sector &middot; location &middot; year, then a 1&ndash;2 line description.</p><input class="inp" type="text" data-key="Project 4 — Title / sector / location / year" placeholder="Add another project (optional)"><textarea class="inp" style="margin-top:8px" data-key="Project 4 — Description" placeholder="1–2 lines describing the project"></textarea><label class="chk-row" style="margin-top:8px"><input type="checkbox" data-key="Project 4 — Flagship (homepage)"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">Flagship — show on homepage</span></label></div>
       <div class="field"><div class="field-top"><span class="q">More projects?</span><span class="pill opt">Optional</span></div><p class="why">List any additional projects here (one per line), or just send them on WhatsApp.</p><textarea class="inp" data-key="Additional projects" placeholder="Title · sector · location · year · short description — one per line"></textarea></div>
-      <div class="field"><div class="field-top"><span class="q">Project photos shared?</span><span class="pill launch">Before launch</span></div><p class="why">Send hi-res photos on WhatsApp, labelled with each project's title.</p><label class="chk-row"><input type="checkbox" data-key="Project photos shared on WhatsApp"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">I've shared project photos on WhatsApp</span></label></div>
+      <div class="field"><div class="field-top"><span class="q">Project photos shared?</span><span class="pill launch">Before launch</span></div><p class="why">Send hi-res photos on WhatsApp or upload to the Drive folder above, labelled with each project's title.</p><label class="chk-row"><input type="checkbox" data-key="Project photos shared on WhatsApp"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">I've shared project photos on WhatsApp</span></label></div>
     </div>
 
     <!-- 4. SERVICES & PRICING -->
@@ -241,6 +259,7 @@ input, textarea, button, select { font-family:inherit; }
 /* ============ CONFIG ============ */
 const CLIENT_SLUG     = "matrixfms";        // keeps autosave separate per client
 const WHATSAPP_NUMBER = "917030602026";     // Axgen WhatsApp (digits only, incl. 91). Answers are sent here.
+const DRIVE_UPLOAD_URL = "https://drive.google.com/drive/folders/1OW-V39QHqDUQ354k8RlZw3yog1xrkXzo?usp=sharing"; // client upload folder
 /* =============================== */
 
 const KEY = "axgen_onboarding_" + CLIENT_SLUG;
@@ -252,6 +271,10 @@ const EXCLUDE_NA = ["Logo shared (PNG transparent / SVG)", "Tagline", "About the
 const fields = Array.from(document.querySelectorAll("[data-key]"));
 const byKey = {}; fields.forEach(f => byKey[f.getAttribute("data-key")] = f);
 const naState = {}, naBtn = {};
+
+// Drive upload button
+const ulink = document.getElementById("uploadLink");
+if (ulink && DRIVE_UPLOAD_URL) { ulink.href = DRIVE_UPLOAD_URL; }
 
 // inject "Don't have / N/A" buttons
 fields.forEach(f => {
