@@ -209,7 +209,6 @@ textarea.inp { resize:vertical; min-height:46px; line-height:1.5; }
       <p class="block-why">A few decisions let us go live cleanly. The technical hosting we handle for you.</p>
       <div class="access-to"><span class="ic">&#128273;</span><p><strong>Who to give access to:</strong> for your <strong>domain / DNS</strong> (and analytics once live), add <span class="email access-email-google">axgen.main@gmail.com</span> as a user. We host the site under Axgen's own Google account.</p></div>
       <div class="field"><div class="field-top"><span class="q">Preferred domain name</span><span class="pill req">Required</span></div><p class="why">Your web address. Don't own one? We'll help you choose &amp; register.</p><input class="inp" type="text" data-key="Preferred domain" data-req="1" placeholder="e.g. yourbrand.com"></div>
-      <div class="field"><div class="field-top"><span class="q">Domain registrar / DNS access</span><span class="pill launch">Before launch</span></div><p class="why">Where you bought the domain (so we can point it at the new site).</p><input class="inp" type="text" data-key="Registrar / DNS" placeholder="e.g. GoDaddy / BigRock — or 'no domain yet'"></div>
       <div class="field"><div class="field-top"><span class="q">A Gmail account for hosting setup</span><span class="pill req">Required</span></div><p class="why">We host your site under a Google account. Share a business Gmail, or we'll guide you to create one.</p><input class="inp" type="text" data-key="Gmail for hosting" data-req="1" placeholder="business@gmail.com — or 'please help me create one'"></div>
       <div class="field"><div class="field-top"><span class="q">Where should website leads go?</span><span class="pill launch">Before launch</span></div><p class="why">The email/WhatsApp that should receive enquiries &amp; downloads.</p><input class="inp" type="text" data-key="Where website leads go" placeholder="email and/or WhatsApp number"></div>
     </div>
@@ -217,14 +216,11 @@ textarea.inp { resize:vertical; min-height:46px; line-height:1.5; }
 
     <!-- ===== KEEP IF: SEO / AEO / GEO ===== -->
     <div class="block">
-      <div class="block-head"><span class="block-num">05</span><span class="block-title">SEO &amp; Search Access</span></div>
-      <p class="block-why">Tools that let us optimise, measure and report. Most are set up once the site is live — and <strong>we'll create any you don't have</strong>, so just tick what already exists.</p>
-      <div class="access-to"><span class="ic">&#128273;</span><p><strong>Who to give access to:</strong> add <span class="email access-email-google">axgen.main@gmail.com</span> as a <strong>manager / user</strong> on each account below. (We send a step-by-step on request — no passwords needed.)</p></div>
+      <div class="block-head"><span class="block-num">05</span><span class="block-title">Google Business Profile</span></div>
+      <p class="block-why">Helps you show up on Google Maps &amp; local search. Set up once the site is live — and <strong>we'll create it if you don't have one</strong>.</p>
+      <div class="access-to"><span class="ic">&#128273;</span><p><strong>Who to give access to:</strong> add <span class="email access-email-google">axgen.main@gmail.com</span> as a <strong>manager / user</strong>. (We send a step-by-step on request — no passwords needed.)</p></div>
       <div class="field"><div class="field-top"><span class="q">Google Business Profile</span><span class="pill launch">Before launch</span></div><p class="why">Helps you show on Google Maps / search. We can create one.</p><label class="chk-row"><input type="checkbox" data-key="GBP access given"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">Access given</span></label><a class="qlink" href="https://business.google.com/" target="_blank" rel="noopener">&#128279; Open Google Business Profile &rarr;</a></div>
-      <div class="field"><div class="field-top"><span class="q">Google Search Console</span><span class="pill launch">Before launch</span></div><p class="why">Verifies the site &amp; tracks search performance.</p><label class="chk-row"><input type="checkbox" data-key="Search Console access given"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">Access given</span></label><a class="qlink" href="https://search.google.com/search-console/users" target="_blank" rel="noopener">&#128279; Open Search Console &rsaquo; Users &rarr;</a></div>
-      <div class="field"><div class="field-top"><span class="q">Bing Webmaster Tools</span><span class="pill launch">Before launch</span></div><p class="why">Also powers AI search (ChatGPT/Copilot). We can set this up.</p><label class="chk-row"><input type="checkbox" data-key="Bing access given"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">Access given</span></label><a class="qlink" href="https://www.bing.com/webmasters/" target="_blank" rel="noopener">&#128279; Open Bing Webmaster Tools &rarr;</a></div>
-      <div class="field"><div class="field-top"><span class="q">Google Analytics (GA4)</span><span class="pill launch">Before launch</span></div><p class="why">Measures visitors &amp; enquiries so we can prove results.</p><label class="chk-row"><input type="checkbox" data-key="GA4 access given"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></span><span class="chk-txt">Access given</span></label><a class="qlink" href="https://analytics.google.com/analytics/web/#/admin" target="_blank" rel="noopener">&#128279; Open Google Analytics &rsaquo; Admin &rarr;</a></div>
-      <div class="callout info"><span class="callout-ic">&#128274;</span><p><strong>Don't have these?</strong> Totally normal — leave them unticked and Axgen will create and configure everything for you.</p></div>
+      <div class="callout info"><span class="callout-ic">&#128274;</span><p><strong>Don't have this?</strong> Totally normal — leave it unticked and Axgen will create and configure it for you.</p></div>
     </div>
     <!-- ===== END SEO ===== -->
 
@@ -283,7 +279,7 @@ const ACCESS_EMAIL_GOOGLE = "axgen.main@gmail.com";  // Google-based access: Sea
 const KEY = "axgen_onboarding_" + CLIENT_SLUG;
 // no "Don't have / N/A" for identity fields or for access grants (access is unavoidable)
 const EXCLUDE_NA = ["Legal/brand name", "City & service area", "Decision-maker & contact",
-  "GBP access given", "Search Console access given", "Bing access given", "GA4 access given",
+  "GBP access given",
   "Facebook Page access", "Meta ad account access", "Meta billing added"];
 const fields = Array.from(document.querySelectorAll("[data-key]"));
 const byKey = {}; fields.forEach(f => byKey[f.getAttribute("data-key")] = f);
